@@ -1,0 +1,1 @@
+web: gunicorn dogsapp.wsgi
