@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'dogsapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tenders64',
-        'USER': 'tenders64@gmail.com',
-        'PASSWORD': '',
+        'NAME': 'dogsapp',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
         'PORT': '5432',
     }
 }
