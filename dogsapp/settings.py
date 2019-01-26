@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2^i-gsvj_@4)8wvf!=nmv4obc$(cyias77s#2dvp9zs94)yb1#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['bruce-n-dito.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    'bruce-n-dito.herokuapp.com'
+    ]
 
 
 # Application definition
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'dogsapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tenders64',
+        'USER': 'fuveskkinirdlr',
+        'PASSWORD': 'fea7c56b5692ec20ca0a057dfdf1ebed16777d2b3f8668a522efef8ddd4522c0',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
