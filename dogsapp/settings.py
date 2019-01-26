@@ -82,9 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tenders64',
-        'USER': 'fuveskkinirdlr',
-        'PASSWORD': 'fea7c56b5692ec20ca0a057dfdf1ebed16777d2b3f8668a522efef8ddd4522c0',
-        'HOST': 'postgres://fuveskkinirdlr:fea7c56b5692ec20ca0a057dfdf1ebed16777d2b3f8668a522efef8ddd4522c0@ec2-54-225-89-195.compute-1.amazonaws.com:5432/d4j2vla1hf1eiq',
+        'USER': 'tenders64@gmail.com',
+        'PASSWORD': '',
         'PORT': '5432',
     }
 }
