@@ -32,7 +32,7 @@ def pastrates(request, num):
     today = datetime.now() 
     diff = today - timedelta(days=int(num))
     context = {
-        'rates': Rate.objects.filter(date__range=(diff, today))
+        'rates': Rate.objects.filter(date__range=(diff, today)).order_by('-date')
     }
     return render(request, "dogs/index.html", context)
 
