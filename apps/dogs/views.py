@@ -5,9 +5,6 @@ from django.shortcuts import render, redirect
 from .models import *
 # Create your views here.
 def index(request):
-    today = datetime.now() 
-    three_ago = today - timedelta(days=5)
-    
     context = {
         # 'rates': Rate.objects.filter(date__range=(three_ago, today))
         'rates': Rate.objects.all().order_by('-date')
@@ -30,3 +27,13 @@ def rate(request):
     else:
         Rate.objects.create(rate=request.POST['rate'], date=datetime.now())
     return redirect("/")
+
+def pastrates(request, num):
+    today = datetime.now() 
+    diff = today - timedelta(days=int(num))
+    context = {
+        'rates': Rate.objects.filter(date__range=(diff, today))
+    }
+    return render(request, "dogs/index.html", context)
+
+    
