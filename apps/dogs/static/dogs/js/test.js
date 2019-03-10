@@ -1,23 +1,24 @@
 $(document).ready(function(){
     getRates(0);
-    function getRates(days){
-        $.get(
-            '/rates/past/'+days+'/json',
-            function(response){
-                data = JSON.parse(response);
-                buildTable(data);
-                buildGraph(data);
-            },
-            'json'
-        );
-    }
-
+    
     $("a").click(function(e){
         e.preventDefault();
         getRates($(this).attr("data-id"));
     })
     
 })
+
+function getRates(days){
+    $.get(
+        '/rates/past/'+days+'/json',
+        function(response){
+            data = JSON.parse(response);
+            buildTable(data);
+            buildGraph(data);
+        },
+        'json'
+    );
+}
 
 function buildTable(data){
     let rates = data.map(function(rateObj){return rateObj.fields;})
