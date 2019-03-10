@@ -35,6 +35,7 @@ function buildTable(data){
 }
 
 function buildGraph(data){
+    $('svg').html("");
     let oldestDate = new Date(data[0].fields.date),
         newestDate = new Date(data[data.length-1].fields.date);
     
