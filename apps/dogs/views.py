@@ -2,6 +2,8 @@
 from __future__ import unicode_literals
 from datetime import datetime, timedelta
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.core import serializers
 from .models import *
 # Create your views here.
 def index(request):
@@ -36,4 +38,12 @@ def pastrates(request, num):
     }
     return render(request, "dogs/index.html", context)
 
-    
+def pastrates_json(request, num):
+    today = datetime.now() 
+    if int(num) is 0:
+        data = Rate.objects.all().order_by('-date')
+    else:
+        diff = today - timedelta(days=int(num))
+        data = Rate.objects.filter(date__range=(diff, today)).order_by('-date')
+    outgoing_data = serializers.serialize("json", data) 
+    return JsonResponse(outgoing_data, safe=False)

@@ -1,0 +1,15 @@
+#svg-area {
+    padding: 10px;
+}
+svg {
+    background-color: #002044;
+    height: 300px;
+    width: 95%;
+    /* border: 5px solid rgb(255, 111, 0); */
+    border: 5px solid white;
+}
+.line {
+    fill: none;
+    stroke: rgb(255, 174, 0);
+    stroke-width: 3;
+}
