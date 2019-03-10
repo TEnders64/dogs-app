@@ -1,16 +1,15 @@
 $(document).ready(function(){
     getRates(0);
     function getRates(days){
-        $.ajax({
-            url: '/rates/past/'+days+'/json',
-            method: 'get',
-            success: function(response){
+        $.get(
+            '/rates/past/'+days+'/json',
+            function(response){
                 data = JSON.parse(response);
                 buildTable(data);
                 buildGraph(data);
             },
-            dataType: 'json'
-        })
+            'json'
+        );
     }
 
     $("a").click(function(e){
